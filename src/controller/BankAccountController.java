@@ -107,14 +107,37 @@ public class BankAccountController {
                 System.out.println(pay);
             }
         } else {
-            System.out.println("Danh sách nhân viên rỗng!!!");
+            System.out.println("Danh sách tài khoản thanh toán rỗng!!!");
         }
         if (!savingsAccounts.isEmpty()) {
             for (SavingsAccount sav : savingsAccounts) {
                 System.out.println(sav);
             }
         } else {
-            System.out.println("Danh sách nhân viên rỗng!!!");
+            System.out.println("Danh sách tài khoản tiết kiệm rỗng!!!");
+        }
+
+    }
+
+    public void deleteAccount() {
+        System.out.println("========== Xoá Khách Hàng =============");
+        System.out.println("Nhập mã khách hàng muốn xóa: ");
+        String id = scanner.nextLine();
+        SavingsAccount savingsAccountDelete = null;
+        for (SavingsAccount sav: savingsAccounts) {
+            if (sav.getId().equals(id) ){
+                savingsAccountDelete = sav;
+                break;
+
+            }
+        }
+        if (savingsAccountDelete != null) {
+            savingsAccounts.remove(savingsAccountDelete);
+
+            System.out.println("Tài khoản với mã " + id + " đã được xóa!");
+
+        } else {
+            System.out.println("Không tìm thấy tài khoản với mã " + id);
         }
 
     }

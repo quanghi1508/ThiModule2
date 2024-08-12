@@ -31,7 +31,7 @@ public class BankAccountManager {
                     controller.menuAddBankAccount();
                     break;
                 case 2:
-
+                    controller.deleteAccount();
                     break;
                 case 3:
                     controller.displayListAccount();
